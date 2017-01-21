@@ -10,14 +10,15 @@
     <sprite>sprites\spr_submarine</sprite>
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
+    <sprite>sprites\sprite4</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\testing_bg</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
-    <object>objects\submarine</object>
     <object>objects\enemy</object>
+    <object>objects\submarine</object>
     <object>objects\obstacle</object>
     <object>objects\npc_fish</object>
     <object>objects\obj_lighting</object>

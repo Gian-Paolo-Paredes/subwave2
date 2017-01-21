@@ -29,6 +29,7 @@
 
 light_surface = surface_create(view_wview, view_hview);
 
+global.flashlight_toggle = true;
 </string>
           </argument>
         </arguments>
@@ -56,6 +57,8 @@ light_surface = surface_create(view_wview, view_hview);
 draw_clear_alpha(c_black, 1);
 
 draw_set_blend_mode(bm_add);
+
+
 
 
 </string>
