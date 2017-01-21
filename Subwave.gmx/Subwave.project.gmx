@@ -11,6 +11,7 @@
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
     <sprite>sprites\spr_ambient</sprite>
+    <sprite>sprites\spr_button_start</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\testing_bg</background>
@@ -26,10 +27,14 @@
     <object>objects\npc_fish</object>
     <object>objects\obj_lighting</object>
     <object>objects\obj_wall</object>
+    <object>objects\button_start</object>
+    <object>objects\button_credits</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\title_room</room>
     <room>rooms\the_level_of_legend</room>
+    <room>rooms\room0</room>
+    <room>rooms\credit_rooom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
