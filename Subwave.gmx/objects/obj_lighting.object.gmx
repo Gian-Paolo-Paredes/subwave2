@@ -25,11 +25,51 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ambient_light = 0.05;
+            <string>ambient_light = 0.005;
 
 light_surface = surface_create(view_wview, view_hview);
 
 global.flashlight_toggle = true;
+
+application_surface_draw_enable(false);
+
+uniform_ambient = shader_get_uniform(the_shader, "u_fAmbient");
+
+sampler_light = shader_get_sampler_index(the_shader, "u_sLight");
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>shader_set(the_shader);
+
+shader_set_uniform_f(uniform_ambient, ambient_light);
+
+texture_set_stage(sampler_light, surface_get_texture(light_surface));
+
+draw_surface(application_surface, 0, 0);
+
+shader_reset();
+
+
 </string>
           </argument>
         </arguments>
@@ -58,6 +98,13 @@ draw_clear_alpha(c_black, 1);
 
 draw_set_blend_mode(bm_add);
 
+    draw_sprite_ext(spr_ambient, 0, submarine.x, submarine.y, 1, 1, point_direction(submarine.x, submarine.y, submarine.x + 1, submarine.y), c_white, 1);
+if(global.flashlight_toggle == true){
+    draw_sprite_ext(light_cone, 0, submarine.x, submarine.y, 1, 1, point_direction(submarine.x, submarine.y, submarine.x + 1, submarine.y), c_white, 1);
+} 
+draw_set_blend_mode(bm_normal);
+
+surface_reset_target();
 
 
 

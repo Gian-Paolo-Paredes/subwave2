@@ -10,11 +10,15 @@
     <sprite>sprites\spr_submarine</sprite>
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
+    <sprite>sprites\spr_ambient</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\testing_bg</background>
   </backgrounds>
   <paths name="paths"/>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\the_shader.shader</shader>
+  </shaders>
   <objects name="objects">
     <object>objects\submarine</object>
     <object>objects\enemy</object>
