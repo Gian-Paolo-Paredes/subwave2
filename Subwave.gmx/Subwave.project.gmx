@@ -31,10 +31,10 @@
     <object>objects\button_credits</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\title_room</room>
-    <room>rooms\the_level_of_legend</room>
     <room>rooms\room0</room>
+    <room>rooms\the_level_of_legend</room>
     <room>rooms\credit_rooom</room>
+    <room>rooms\title_room</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
