@@ -11,6 +11,10 @@
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
     <sprite>sprites\sprite4</sprite>
+    <sprite>sprites\PuffNorm</sprite>
+    <sprite>sprites\PuffComing</sprite>
+    <sprite>sprites\FL</sprite>
+    <sprite>sprites\EEL</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\testing_bg</background>
@@ -18,6 +22,8 @@
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\enemy</object>
+    <object>objects\object7</object>
+    <object>objects\Eel1</object>
     <object>objects\submarine</object>
     <object>objects\obstacle</object>
     <object>objects\npc_fish</object>

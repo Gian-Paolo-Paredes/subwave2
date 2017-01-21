@@ -74,6 +74,8 @@
     <instance objName="obstacle" x="288" y="96" name="inst_2CD6A56F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="submarine" x="192" y="256" name="inst_C3A3E29B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="enemy" x="352" y="96" name="inst_70697C12" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="object7" x="800" y="576" name="inst_A14A62A5" locked="0" code="" scaleX="1.21333336830139" scaleY="1.32000005245209" colour="4294967295" rotation="0"/>
+    <instance objName="Eel1" x="704" y="288" name="inst_87C0F5C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
