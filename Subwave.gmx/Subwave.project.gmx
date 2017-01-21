@@ -12,6 +12,11 @@
     <sprite>sprites\sprite1</sprite>
     <sprite>sprites\spr_ambient</sprite>
     <sprite>sprites\spr_button_start</sprite>
+    <sprite>sprites\sprite4</sprite>
+    <sprite>sprites\PuffNorm</sprite>
+    <sprite>sprites\PuffComing</sprite>
+    <sprite>sprites\FL</sprite>
+    <sprite>sprites\EEL</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\testing_bg</background>
@@ -21,6 +26,8 @@
     <shader type="GLSLES">shaders\the_shader.shader</shader>
   </shaders>
   <objects name="objects">
+    <object>objects\object7</object>
+    <object>objects\Eel1</object>
     <object>objects\submarine</object>
     <object>objects\enemy</object>
     <object>objects\obstacle</object>
