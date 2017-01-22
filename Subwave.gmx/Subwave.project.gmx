@@ -20,6 +20,10 @@
     <sprite>sprites\PuffComing</sprite>
     <sprite>sprites\FL</sprite>
     <sprite>sprites\EEL</sprite>
+    <sprite>sprites\puff_out</sprite>
+    <sprite>sprites\eel_out</sprite>
+    <sprite>sprites\flounder_out</sprite>
+    <sprite>sprites\angler_out</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\testing_bg</background>
@@ -43,8 +47,8 @@
     <object>objects\controller</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
     <room>rooms\the_level_of_legend</room>
+    <room>rooms\room0</room>
     <room>rooms\credit_rooom</room>
     <room>rooms\title_room</room>
   </rooms>
