@@ -37,6 +37,7 @@ uniform_ambient = shader_get_uniform(the_shader, "u_fAmbient");
 
 sampler_light = shader_get_sampler_index(the_shader, "u_sLight");
 
+global.sonar_surf = false;
 </string>
           </argument>
         </arguments>
@@ -98,16 +99,66 @@ draw_clear_alpha(c_black, 1);
 
 draw_set_blend_mode(bm_add);
 
+if(submarine.sprite_index = spr_submarine){
     draw_sprite_ext(spr_ambient, 0, submarine.x - view_xview[0], submarine.y - view_yview[0], 1, 1, point_direction(submarine.x, submarine.y, submarine.x + 1, submarine.y), c_white, 1);
-if(global.flashlight_toggle == true){
-    draw_sprite_ext(light_cone, 0, submarine.x - view_xview[0], submarine.y - view_yview[0], 1, 1, point_direction(submarine.x, submarine.y, submarine.x + 1, submarine.y), c_white, 1);
-} 
+    if(global.flashlight_toggle == true){
+        draw_sprite_ext(light_cone, 0, submarine.x + 110 - view_xview[0], submarine.y + 25 - view_yview[0], 1, 1, point_direction(submarine.x, submarine.y, submarine.x + 1, submarine.y), c_white, 1);
+    } 
+} else if(submarine.sprite_index = spr_sub_2){
+    draw_sprite_ext(spr_ambient_2, 0, submarine.x - view_xview[0], submarine.y - view_yview[0], 1, 1, point_direction(submarine.x, submarine.y, submarine.x + 1, submarine.y), c_white, 1);
+    if(global.flashlight_toggle == true){
+        draw_sprite_ext(light_cone, 0, submarine.x - view_xview[0] - 110, submarine.y + 25 - view_yview[0], 1, -1, point_direction(submarine.x, submarine.y, submarine.x - 1, submarine.y), c_white, 1);
+    } 
+}
+
+with(obj_white_light){
+    draw_self();
+
+}
+
+with(obj_green_light){
+    draw_self();
+
+}
+
+with(obj_yellow_light){
+    draw_self();
+
+}
+
 draw_set_blend_mode(bm_normal);
 
 surface_reset_target();
 
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="88">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(global.flashlight_toggle == false) {
+    if(global.sonar_surf = false) {
+        global.sonar_surf = true;
+    }
+}
 </string>
           </argument>
         </arguments>

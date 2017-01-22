@@ -122,6 +122,10 @@ key_space = keyboard_check(vk_space);
 //image change
 sprite_index = PuffNorm;
 
+if(global.flashlight_toggle == false) {
+    sprite_index = puff_out;
+}
+
 //if light is on, make enemy move toward sub
 if(key_space){
 //has_collided = 0 - thing has not bounced off of submarine (should be going towards sub)

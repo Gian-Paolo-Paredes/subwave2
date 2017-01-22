@@ -8,9 +8,11 @@
   <sprites name="sprites">
     <sprite>sprites\light_cone</sprite>
     <sprite>sprites\spr_submarine</sprite>
+    <sprite>sprites\spr_sub_2</sprite>
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
     <sprite>sprites\spr_ambient</sprite>
+    <sprite>sprites\spr_ambient_2</sprite>
     <sprite>sprites\spr_button_start</sprite>
     <sprite>sprites\sprite4</sprite>
     <sprite>sprites\Mine_idle</sprite>
@@ -31,9 +33,16 @@
     <sprite>sprites\light_battery2</sprite>
     <sprite>sprites\light_battery3</sprite>
     <sprite>sprites\light_battery1</sprite>
+    <sprite>sprites\SPR_start_mask</sprite>
+    <sprite>sprites\spr_foreground</sprite>
+    <sprite>sprites\spr_light_w</sprite>
+    <sprite>sprites\spr_light_y</sprite>
+    <sprite>sprites\spr_light_green</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\testing_bg</background>
+    <background>background\title_screen</background>
+    <background>background\level_bg</background>
   </backgrounds>
   <paths name="paths"/>
   <shaders name="shaders">
@@ -53,10 +62,14 @@
     <object>objects\button_start</object>
     <object>objects\button_credits</object>
     <object>objects\controller</object>
+    <object>objects\level_fore</object>
+    <object>objects\obj_white_light</object>
+    <object>objects\obj_yellow_light</object>
+    <object>objects\obj_green_light</object>
+    <object>objects\obj_light_parent</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\the_level_of_legend</room>
-    <room>rooms\room0</room>
     <room>rooms\credit_rooom</room>
     <room>rooms\title_room</room>
   </rooms>

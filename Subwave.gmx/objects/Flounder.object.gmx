@@ -133,6 +133,10 @@ if ( place_meeting (x+speed,y,obj_wall)){
     motion_set(direction, speed);
               
 }
+
+if(global.flashlight_toggle == false) {
+    sprite_index = flounder_out;
+}
         
 if ( place_meeting (x,y+speed,obj_wall)){
     //vertical bounce

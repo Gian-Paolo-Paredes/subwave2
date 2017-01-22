@@ -88,7 +88,9 @@ key_space = keyboard_check(vk_space);
 //sprite_index = EEL;
 
 
-
+if(global.flashlight_toggle == false) {
+    sprite_index = eel_out;
+}
 
 
 //if light is on, make enemy move toward sub
