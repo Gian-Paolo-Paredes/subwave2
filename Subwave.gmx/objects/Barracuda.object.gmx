@@ -36,7 +36,7 @@ has_collided = 0;
 hsp=4;
 vsp=4;
 isAttacking = false;
-damage = 0;
+damage = 5;
 depth = -11; //makes it go in front of player
 range = 400; //how far detection goes
 //range - how far enemy will drift in either direction
@@ -71,6 +71,7 @@ alarm[0]=1*room_speed
             <string>if (!isAttacking) {
     Xdirection = random_range(spawnX+idleRange, spawnX-idleRange);
     Ydirection = random_range(spawnX+idleRange, spawnX-idleRange);
+    //image_angle = point_direction(Xdirection, Ydirection, x, y);
     move_towards_point( Xdirection, Ydirection, idleSpeed );
 }
     alarm[0] = 1 * room_speed;
@@ -188,7 +189,7 @@ move_bounce_solid(true);
             <kind>1</kind>
             <string>//show_message(":(");
 //if (isAttacking) {
-    has_collided = 1;
+    has_collided = 0;
     move_bounce_all(true);
     motion_set(direction, speed);
 //}
@@ -196,6 +197,7 @@ move_bounce_solid(true);
 //suicide barracuda
 if (isAttacking) {
     instance_destroy();
+    submarine.hp -= damage;
 }
 </string>
           </argument>
