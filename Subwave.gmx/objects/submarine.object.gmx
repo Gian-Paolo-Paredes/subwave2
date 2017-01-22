@@ -41,6 +41,8 @@ vsp_max = 10;
 hp_max =100;
 hp = hp_max;
 
+global.flashlight_toggle = true;
+
 light_max =100;
 light = light_max;
 light_consume = 1;

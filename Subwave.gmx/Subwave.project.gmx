@@ -20,6 +20,17 @@
     <sprite>sprites\PuffComing</sprite>
     <sprite>sprites\FL</sprite>
     <sprite>sprites\EEL</sprite>
+    <sprite>sprites\sprite14</sprite>
+    <sprite>sprites\puff_out</sprite>
+    <sprite>sprites\eel_out</sprite>
+    <sprite>sprites\flounder_out</sprite>
+    <sprite>sprites\angler_out</sprite>
+    <sprite>sprites\health_bar_deco2</sprite>
+    <sprite>sprites\health_bar_deco3</sprite>
+    <sprite>sprites\health_bar_deco1</sprite>
+    <sprite>sprites\light_battery2</sprite>
+    <sprite>sprites\light_battery3</sprite>
+    <sprite>sprites\light_battery1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\testing_bg</background>
@@ -30,6 +41,7 @@
   </shaders>
   <objects name="objects">
     <object>objects\object7</object>
+    <object>objects\Flounder</object>
     <object>objects\Eel1</object>
     <object>objects\submarine</object>
     <object>objects\enemy</object>
@@ -43,8 +55,8 @@
     <object>objects\controller</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
     <room>rooms\the_level_of_legend</room>
+    <room>rooms\room0</room>
     <room>rooms\credit_rooom</room>
     <room>rooms\title_room</room>
   </rooms>
