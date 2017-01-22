@@ -71,16 +71,14 @@
     <instance objName="obj_wall" x="32" y="0" name="inst_6C747899" locked="0" code="" scaleX="30.9677410125732" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="992" y="32" name="inst_A4C65348" locked="0" code="" scaleX="1" scaleY="22" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="640" y="736" name="inst_87E315EF" locked="0" code="" scaleX="12.3870964050293" scaleY="1.02999997138977" colour="4294967295" rotation="0"/>
-    <instance objName="obstacle" x="288" y="96" name="inst_2CD6A56F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Mine" x="480" y="160" name="inst_436E0C42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="submarine" x="320" y="288" name="inst_A2AFF984" locked="0" code="" scaleX="0.899999976158142" scaleY="1.03999996185303" colour="4294967295" rotation="0"/>
     <instance objName="Mine" x="672" y="384" name="inst_F164AA06" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Mine" x="416" y="512" name="inst_CF2CA578" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="object7" x="224" y="512" name="inst_5E2FB38A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="controller" x="96" y="128" name="inst_1A0E1490" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Merge_Object_and_Enemy" x="192" y="64" name="inst_C377A347" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Mine" x="672" y="128" name="inst_470DA89E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Mine" x="512" y="320" name="inst_7E9EEE3D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Barracuda" x="160" y="128" name="inst_CC69E6D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
