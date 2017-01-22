@@ -29,7 +29,7 @@
 image_speed = .5;
 
 OriginalX = x;
-OriginalY=y;
+OriginalY = y;
 range = 400;
 
 vspeed = 0;
@@ -41,6 +41,55 @@ has_collided = 0;
 hsp=4;
 vsp=4;
 //motion_add(random(360), speed);
+alarm[0]=.5*room_speed;
+//driftingRange is how far enemy can drift from its spawn
+driftingRange = 300;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+//key_space = keyboard_check(vk_space);
+//if (!key_space) {
+    Xdirection = random_range(OriginalX+driftingRange, OriginalX-driftingRange);
+    Ydirection = random_range(OriginalY+driftingRange, OriginalY-driftingRange);
+    move_towards_point( Xdirection, Ydirection, speed );
+
+//alarm [0] = 2;
+//if (x&gt; OriginalX + range) {
+//    motion_set (180, speed);
+//}
+//if (x &lt;OriginalX -range){
+//    motion_set(0,speed);
+//}
+
+//if (y&gt; OriginalY +range){
+//    motion_set (90,speed);
+//    }
+//if ( y &lt; OriginalY - range){
+//    show_message("omfg");
+//    motion_set (270, speed);
+//}
+
+alarm[0]=.5*room_speed;
 </string>
           </argument>
         </arguments>
@@ -63,47 +112,33 @@ vsp=4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var range = 200;
-key_space = keyboard_check(vk_space);
-
-direction = irandom_range(0,360);
-
-if (x&gt; OriginalX + range) {
-    motion_set (180, speed);
-    }
-if (x &lt;OriginalX -range){
-motion_set(0,speed);
+            <string>//horizontal bounce with submarine
+if(place_meeting(x + speed - submarine.speed + 10, y, submarine)) {
+    direction = -direction + 180;
+    motion_set(direction, speed);
 }
 
-if (y&gt; OriginalY +range){
-    motion_set (180,speed);
-    }
-if ( y &lt; OriginalY - range){
-motion_set (0, speed);
+//Vertical bounce with submarine
+if(place_meeting(x, y + speed - submarine.speed + 10, submarine)) {
+    direction = -direction;
+    motion_set(direction, speed);
 }
 
+            
 
-//range-10 makes it never bounce far enough away to not come back to sub
-if distance_to_object(submarine) &gt; range-100
-    has_collided = 0;
-    
 //COLLISION WITH WALLS
 if ( place_meeting (x+speed,y,obj_wall)){
-    
-         //horizontal bounce
-                direction = -direction + 180;
-                motion_set(direction, speed);
+    //horizontal bounce
+    direction = -direction + 180;
+    motion_set(direction, speed);
               
-    }
+}
         
-        //vertical Collison
-    if ( place_meeting (x,y+speed,obj_wall)){
-                direction = -direction;
-                motion_set(direction, speed);
-
-        }
-        
-        
+if ( place_meeting (x,y+speed,obj_wall)){
+    //vertical bounce
+    direction = -direction;
+    motion_set(direction, speed);
+}   
 
 </string>
           </argument>

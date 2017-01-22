@@ -20,6 +20,7 @@
     <sprite>sprites\PuffComing</sprite>
     <sprite>sprites\FL</sprite>
     <sprite>sprites\EEL</sprite>
+    <sprite>sprites\sprite14</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\testing_bg</background>
@@ -30,6 +31,7 @@
   </shaders>
   <objects name="objects">
     <object>objects\object7</object>
+    <object>objects\Flounder</object>
     <object>objects\Eel1</object>
     <object>objects\submarine</object>
     <object>objects\enemy</object>

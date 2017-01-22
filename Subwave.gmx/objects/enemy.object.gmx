@@ -111,8 +111,8 @@ if(key_space &amp;&amp; distance_to_object(submarine) &lt; range &amp;&amp; has_
     //direction += 10; // random direction
     //direction = 0;
 }
-hacc = lengthdir_x(sped, direction);//clamp(lengthdir_x(sped, dir),-1,1);
-vacc = lengthdir_y(sped, direction);//clamp(lengthdir_y(sped, dir),-1,1);
+hacc = lengthdir_x(speed, direction);//clamp(lengthdir_x(sped, dir),-1,1);
+vacc = lengthdir_y(speed, direction);//clamp(lengthdir_y(sped, dir),-1,1);
 
 hsp += hacc;
 vsp += vacc;
