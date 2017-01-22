@@ -65,6 +65,11 @@ if(x &lt; originalX - range) {
     motion_set(0, speed)
 }
 
+           if(image_index &gt;= 7){
+               submarine.hp -= damage;
+              instance_destroy();
+            }
+
 if (place_meeting(x, y, submarine)) {
     //sprite_index = Mine_idle;///
     image_speed = .7;
@@ -73,11 +78,7 @@ if (place_meeting(x, y, submarine)) {
          //   show_message(image_index);
         //if (image_speed &gt;0){
         
-           //show_message("all the hard work gone just like that");
-           if(image_index &gt;= 7){
-            submarine.hp -= damage;
-            instance_destroy();
-        }
+           //show_message("all the hard work gone just like that")
 
        }       // }
     /*

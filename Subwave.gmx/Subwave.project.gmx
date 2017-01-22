@@ -38,6 +38,7 @@
     <sprite>sprites\spr_light_w</sprite>
     <sprite>sprites\spr_light_y</sprite>
     <sprite>sprites\spr_light_green</sprite>
+    <sprite>sprites\Angler</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\testing_bg</background>
@@ -50,10 +51,14 @@
   </shaders>
   <objects name="objects">
     <object>objects\object7</object>
-    <object>objects\Flounder</object>
     <object>objects\Eel1</object>
     <object>objects\submarine</object>
     <object>objects\enemy</object>
+    <object>objects\Merge_Object_and_Enemy</object>
+    <object>objects\Barracuda</object>
+    <object>objects\obj_Eel</object>
+    <object>objects\obj_Angler</object>
+    <object>objects\Flounder</object>
     <object>objects\obstacle</object>
     <object>objects\npc_fish</object>
     <object>objects\obj_wall</object>
@@ -67,8 +72,10 @@
     <object>objects\obj_yellow_light</object>
     <object>objects\obj_green_light</object>
     <object>objects\obj_light_parent</object>
+    <object>objects\Pufferfish</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room0</room>
     <room>rooms\the_level_of_legend</room>
     <room>rooms\credit_rooom</room>
     <room>rooms\title_room</room>
