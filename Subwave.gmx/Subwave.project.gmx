@@ -11,6 +11,9 @@
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
     <sprite>sprites\sprite4</sprite>
+    <sprite>sprites\Mine_idle</sprite>
+    <sprite>sprites\Mine_Explode</sprite>
+    <sprite>sprites\Empty</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\testing_bg</background>
@@ -19,10 +22,11 @@
   <objects name="objects">
     <object>objects\enemy</object>
     <object>objects\submarine</object>
-    <object>objects\obstacle</object>
     <object>objects\npc_fish</object>
-    <object>objects\obj_lighting</object>
+    <object>objects\obstacle</object>
     <object>objects\obj_wall</object>
+    <object>objects\obj_lighting</object>
+    <object>objects\Mine</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
