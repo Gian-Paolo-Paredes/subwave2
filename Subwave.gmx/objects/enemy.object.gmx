@@ -93,7 +93,7 @@ alarm[0] = 60;
           <argument>
             <kind>1</kind>
             <string>key_space = keyboard_check(vk_space);
-
+sped = 1;
 //RANDOM MOVEMENT - this will be overriden by bouncing/key space below
 //move_towards (Xdirection, Ydirection, speed);
 //show_message(Xdirection + " " + Ydirection);
@@ -181,6 +181,7 @@ move_bounce_solid(true);
           <argument>
             <kind>1</kind>
             <string>move_bounce_all(true);
+ has_collided =1;
 </string>
           </argument>
         </arguments>

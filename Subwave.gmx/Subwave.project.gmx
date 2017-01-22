@@ -20,6 +20,12 @@
     <sprite>sprites\PuffComing</sprite>
     <sprite>sprites\FL</sprite>
     <sprite>sprites\EEL</sprite>
+    <sprite>sprites\health_bar_deco2</sprite>
+    <sprite>sprites\health_bar_deco3</sprite>
+    <sprite>sprites\health_bar_deco1</sprite>
+    <sprite>sprites\light_battery2</sprite>
+    <sprite>sprites\light_battery3</sprite>
+    <sprite>sprites\light_battery1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\testing_bg</background>
