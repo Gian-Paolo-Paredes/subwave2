@@ -34,7 +34,7 @@ originalX = x;
 originalY = y; 
 //range of drifting
 range = 5;
-
+damage = 25;
 speed = .3;
 </string>
           </argument>
@@ -75,6 +75,7 @@ if (place_meeting(x, y, submarine)) {
         
            //show_message("all the hard work gone just like that");
            if(image_index &gt;= 7){
+            submarine.hp -= damage;
             instance_destroy();
         }
 

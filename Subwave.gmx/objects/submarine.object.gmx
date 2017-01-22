@@ -41,6 +41,12 @@ vsp_max = 10;
 hp_max =100;
 hp = hp_max;
 
+global.flashlight_toggle = true;
+
+light_max =100;
+light = light_max;
+light_consume = 1;
+
 
 
 </string>
@@ -73,10 +79,15 @@ key_left = keyboard_check(vk_left);
 key_up = keyboard_check(vk_up);
 key_down = keyboard_check(vk_down);
 
+key_space = keyboard_check(vk_space);
 
 if(hp &lt;= 0){
 // game over
     room_restart();
+}
+
+if(key_space){
+    light -= light_consume;// * delta_time;
 }
 
 
