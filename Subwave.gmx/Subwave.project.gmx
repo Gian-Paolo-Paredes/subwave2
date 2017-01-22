@@ -4,7 +4,10 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\ambient_sound</sound>
+    <sound>sound\title_credits</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\light_cone</sprite>
     <sprite>sprites\spr_submarine</sprite>
@@ -44,6 +47,7 @@
     <background>background\testing_bg</background>
     <background>background\title_screen</background>
     <background>background\level_bg</background>
+    <background>background\credits</background>
   </backgrounds>
   <paths name="paths"/>
   <shaders name="shaders">
@@ -65,6 +69,8 @@
     <object>objects\obj_lighting</object>
     <object>objects\Mine</object>
     <object>objects\button_start</object>
+    <object>objects\button_back_to</object>
+    <object>objects\button_to_cred</object>
     <object>objects\button_credits</object>
     <object>objects\controller</object>
     <object>objects\level_fore</object>
@@ -75,10 +81,9 @@
     <object>objects\Pufferfish</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\title_room</room>
     <room>rooms\the_level_of_legend</room>
     <room>rooms\credit_rooom</room>
-    <room>rooms\title_room</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

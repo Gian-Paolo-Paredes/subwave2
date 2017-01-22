@@ -47,7 +47,7 @@ light_max =100;
 light = light_max;
 light_consume = 1;
 
-
+audio_play_sound(ambient_sound, 10, true);
 
 </string>
           </argument>
