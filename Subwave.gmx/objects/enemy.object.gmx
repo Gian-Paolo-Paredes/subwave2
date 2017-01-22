@@ -29,10 +29,15 @@
 hspeed = 0;
 speed = 4;
 gravity = 0;
-max_speed = 10;
+max_speed = 5;
 has_collided = 0;
-hsp=4;
-vsp=4;
+hsp=0;
+vsp=0;
+sped = 1; // accel
+dir = 0;
+hacc = 0;
+vacc = 0;
+move_bounce_all(true);
 //motion_add(random(360), speed);
 </string>
           </argument>
@@ -58,68 +63,127 @@ vsp=4;
             <kind>1</kind>
             <string>var range = 200;
 key_space = keyboard_check(vk_space);
+prevX = x;
+prevY = y;
 
-//if light is on, make enemy move toward sub
-if(key_space){
-//has_collided = 0 - thing has not bounced off of submarine (should be going towards sub)
-//has_collided = 1 - thing should bounce off of sub and go in opposite direction
-
-    if distance_to_object(submarine) &lt; range &amp;&amp; has_collided = 0 {
-            move_towards_point(submarine.x, submarine.y, speed);
-   
-     
-            //horizontal bounce
-            if(place_meeting(x + speed - submarine.speed, y, submarine)) {
-                direction = -direction + 180;
-                motion_set(direction, speed);
-                has_collided = 1;
-            }
-
-            //Vertical bounce
-            if(place_meeting(x, y + speed - submarine.speed, submarine)) {
-                direction = -direction;
-                motion_set(direction, speed);
-                has_collided = 1;
-            }
-            
-            //WALL COLLISION BELOW
-            if ( place_meeting (x+speed,y,obj_wall)){
-                direction = -direction + 180;
-                motion_set(direction, speed);
-                //set to 0 so that enemy can follow sub again once it
-                //has bounced off any wall
-                has_collided = 0;
-            }
-        
-            if ( place_meeting (x,y+speed,obj_wall)){
-                direction = -direction;
-                motion_set(direction, speed);
-                has_collided = 0;
-
-            }
-
-    }
-}
 //range-10 makes it never bounce far enough away to not come back to sub
 if distance_to_object(submarine) &gt; range-100
     has_collided = 0;
-    
+
+// if light is on
+if(key_space &amp;&amp; distance_to_object(submarine) &lt; range &amp;&amp; has_collided = 0){
+//has_collided = 0 - thing has not bounced off of submarine (should be going towards sub)
+//has_collided = 1 - thing should bounce off of sub and go in opposite direction
+    direction = point_direction(x,y, submarine.x, submarine.y);
+} else{
+    //direction += 10; // random direction
+    //direction = 0;
+}
+hacc = lengthdir_x(sped, direction);//clamp(lengthdir_x(sped, dir),-1,1);
+vacc = lengthdir_y(sped, direction);//clamp(lengthdir_y(sped, dir),-1,1);
+
+hsp += hacc;
+vsp += vacc;
+
+if (abs(hsp) &gt; max_speed){
+    hsp = sign(hsp) * max_speed;
+}
+if (abs(vsp) &gt; max_speed){
+    vsp = sign(vsp) * max_speed;
+}
+/*
 //COLLISION WITH WALLS
-if ( place_meeting (x+speed,y,obj_wall)){
+if ( place_meeting (x+hsp,y,obj_wall)){ 
+    //horizontal bounce
+    direction = -direction + 180;
+    hsp = -hsp/3;
+    has_collided = 0;
+     //show_message(vsp);
+}
+if ( place_meeting (x,y+vsp,obj_wall)){         
+    //vertical Collison
+     direction += 180;
+     vsp = -vsp/3;
+     has_collided = 0;
+}
+
+//COLLISION WITH SUB
+//horizontal bounce
+
+if(place_meeting(x + hsp - submarine.hspeed, y, submarine)) {
+    x = prevX;
+    direction = -direction + 180;
+    hsp = -hsp/2;
+    //motion_set(direction, speed);
+    has_collided = 1;
+}
+
+//Vertical bounce
+if(place_meeting(x, y + vsp - submarine.vspeed, submarine)) {
+    y = prevY;
+    direction += 180;
+    vsp = -vsp/2;
+    //motion_set(direction, speed);
+    has_collided = 1;
+}
+*/
+//move sub
+x+=hsp;
+y+=vsp;
+
+
     
-         //horizontal bounce
-                direction = -direction + 180;
-                motion_set(direction, speed);
-              
-    }
+
         
-        //vertical Collison
-    if ( place_meeting (x,y+speed,obj_wall)){
-                direction = -direction;
-                motion_set(direction, speed);
 
-        }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_wall">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//direction = -direction;
+move_bounce_solid(true);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="submarine">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>move_bounce_all(true);
 </string>
           </argument>
         </arguments>
