@@ -34,7 +34,8 @@ has_collided = 0;
 hsp=4;
 vsp=4;
 isAttacking = false;
-
+Random = true;
+damage = 0;
 depth = -11; //makes it go in front of player
 
 //range - how far enemy will drift in either direction
@@ -102,7 +103,7 @@ if distance_to_object(submarine) &gt; range-100
     has_collided = 0;
 
 // if light is on
-if(key_space){
+if(key_space &amp;&amp; !Random){
     isAttacking = true; 
     if(distance_to_object(submarine) &lt; range &amp;&amp; has_collided == 0){
         //has_collided = 0 - thing has not bounced off of submarine (should be going towards sub)
