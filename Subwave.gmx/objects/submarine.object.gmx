@@ -84,7 +84,7 @@ if(hp &lt;= 0){
     room_restart();
 }
 
-if(global.flashlight_toggle){
+/*if(global.flashlight_toggle){
     light -= light_consume;// * delta_time;
     if(light &lt;= 0){
         global.flashlight_toggle = false;
@@ -96,7 +96,7 @@ if(global.flashlight_toggle){
         light = light_max;
     }
 }
-
+*/
 
 //reactions
 Hmove = -key_left + key_right;
