@@ -132,7 +132,6 @@ else {
           <argument>
             <kind>1</kind>
             <string>if(isAttacking){
-    show_message("my life");
     submarine.hp -= damage;
     instance_destroy();    
 }
