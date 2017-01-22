@@ -20,9 +20,7 @@
     <sprite>sprites\PuffComing</sprite>
     <sprite>sprites\FL</sprite>
     <sprite>sprites\EEL</sprite>
-<<<<<<< HEAD
     <sprite>sprites\sprite14</sprite>
-=======
     <sprite>sprites\puff_out</sprite>
     <sprite>sprites\eel_out</sprite>
     <sprite>sprites\flounder_out</sprite>
@@ -33,7 +31,6 @@
     <sprite>sprites\light_battery2</sprite>
     <sprite>sprites\light_battery3</sprite>
     <sprite>sprites\light_battery1</sprite>
->>>>>>> origin/master
   </sprites>
   <backgrounds name="background">
     <background>background\testing_bg</background>
