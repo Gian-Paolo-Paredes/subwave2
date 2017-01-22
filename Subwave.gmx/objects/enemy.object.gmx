@@ -149,6 +149,7 @@ move_bounce_solid(true);
           <argument>
             <kind>1</kind>
             <string>move_bounce_all(true);
+has_collided = 1;
 </string>
           </argument>
         </arguments>
