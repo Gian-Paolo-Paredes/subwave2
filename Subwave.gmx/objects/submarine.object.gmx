@@ -79,15 +79,22 @@ key_left = keyboard_check(vk_left);
 key_up = keyboard_check(vk_up);
 key_down = keyboard_check(vk_down);
 
-key_space = global.flashlight_toggle;
-
 if(hp &lt;= 0){
 // game over
     room_restart();
 }
 
-if(key_space){
+if(global.flashlight_toggle){
     light -= light_consume;// * delta_time;
+    if(light &lt;= 0){
+        global.flashlight_toggle = false;
+        light = 0
+    }
+}else{
+    light += light_consume/4;
+    if(light &gt; light_max){
+        light = light_max;
+    }
 }
 
 

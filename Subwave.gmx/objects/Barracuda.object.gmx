@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>vspeed = 0;
 hspeed = 0;
+set_scale = 1/2;
+image_xscale = set_scale;
+image_yscale = set_scale;
 //idleSpeed is the random movement speed
 idleSpeed = 1;
 speed = 0;
@@ -72,6 +75,11 @@ alarm[0]=.1*room_speed
 if (!isAttacking) {
     Xdirection = random_range(spawnX+idleRange, spawnX-idleRange);
     Ydirection = random_range(spawnX+idleRange, spawnX-idleRange);
+     if (Xdirection - x &gt; 0){
+        image_xscale = -set_scale;
+    } else {
+        image_xscale = set_scale;
+    }
     //image_angle = point_direction(Xdirection, Ydirection, x, y);
     move_towards_point( Xdirection, Ydirection, idleSpeed );
 }
@@ -115,10 +123,13 @@ if(global.flashlight_toggle){
         direction = point_direction(x,y, submarine.x, submarine.y);
         hacc = lengthdir_x(speed, direction);//clamp(lengthdir_x(sped, dir),-1,1);
         vacc = lengthdir_y(speed, direction);//clamp(lengthdir_y(sped, dir),-1,1);
-    
+        if(hacc&gt; 0){
+            image_xscale = -1* set_scale;
+        } else{
+            image_xscale = set_scale;
+        }
         hsp += hacc;
         vsp += vacc;
-    
         if (abs(hsp) &gt; max_speed){
             hsp = sign(hsp) * max_speed;
         }

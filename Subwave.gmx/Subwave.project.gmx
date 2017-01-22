@@ -51,7 +51,6 @@
   </shaders>
   <objects name="objects">
     <object>objects\object7</object>
-    <object>objects\Eel1</object>
     <object>objects\submarine</object>
     <object>objects\enemy</object>
     <object>objects\Merge_Object_and_Enemy</object>
@@ -59,6 +58,7 @@
     <object>objects\obj_Eel</object>
     <object>objects\obj_Angler</object>
     <object>objects\Flounder</object>
+    <object>objects\Eel_Final</object>
     <object>objects\obstacle</object>
     <object>objects\npc_fish</object>
     <object>objects\obj_wall</object>

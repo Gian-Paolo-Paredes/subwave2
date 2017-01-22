@@ -31,7 +31,7 @@ image_speed = .5;
 OriginalX = x;
 OriginalY=y;
 range = 400;
-
+Random = true;
 vspeed = 0;
 hspeed = 0;
 speed = 4;
@@ -41,57 +41,6 @@ has_collided = 0;
 hsp=4;
 vsp=4;
 //motion_add(random(360), speed);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//range-10 makes it never bounce far enough away to not come back to sub
-if distance_to_object(submarine) &gt; range
-    has_collided = 0;
-
-// if light is on
-if(global.flashlight_toggle){
-    if(distance_to_object(submarine) &lt; range){
-        //has_collided = 0 - thing has not bounced off of submarine (should be going towards sub)
-        //has_collided = 1 - thing should bounce off of sub and go in opposite direction
-        
-        direction = -1 * point_direction(x,y, submarine.x, submarine.y);
-        hacc = lengthdir_x(speed, direction);//clamp(lengthdir_x(sped, dir),-1,1);
-        vacc = lengthdir_y(speed, direction);//clamp(lengthdir_y(sped, dir),-1,1);
-    
-        hsp += hacc;
-        vsp += vacc;
-    
-        if (abs(hsp) &gt; max_speed){
-            hsp = sign(hsp) * max_speed;
-        }
-        if (abs(vsp) &gt; max_speed){
-            vsp = sign(vsp) * max_speed;
-        }
-    
-        //move sub
-        x+=hsp;
-        y+=vsp;
-    }
-}
 </string>
           </argument>
         </arguments>
