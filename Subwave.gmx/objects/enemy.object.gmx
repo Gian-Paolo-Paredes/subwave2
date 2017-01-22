@@ -69,6 +69,7 @@ alarm[0]=30
             <kind>1</kind>
             <string>Xdirection = random_range(spawnX+range, spawnX-range);
 Ydirection = random_range(spawnX+range, spawnX-range);
+alarm[0] = 60;
 </string>
           </argument>
         </arguments>
@@ -94,8 +95,8 @@ Ydirection = random_range(spawnX+range, spawnX-range);
             <string>key_space = keyboard_check(vk_space);
 
 //RANDOM MOVEMENT - this will be overriden by bouncing/key space below
-move_towards_point(Xdirection, Ydirection, speed);
-show_message(Xdirection + " " + Ydirection);
+//move_towards (Xdirection, Ydirection, speed);
+//show_message(Xdirection + " " + Ydirection);
 
 
 //range-10 makes it never bounce far enough away to not come back to sub
@@ -226,6 +227,7 @@ move_bounce_solid(true);
           <argument>
             <kind>1</kind>
             <string>move_bounce_all(true);
+
 </string>
           </argument>
         </arguments>

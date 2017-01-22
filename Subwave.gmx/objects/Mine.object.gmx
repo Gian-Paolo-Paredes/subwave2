@@ -26,14 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>sprite_index = Mine_idle; 
-image_speed = .06;
+image_speed = 0;
 depth = -10;
 
 //these two allow for drifting side to side movement
 originalX = x;
 originalY = y; 
 //range of drifting
-range = 3;
+range = 5;
 
 speed = .3;
 </string>
@@ -66,36 +66,26 @@ if(x &lt; originalX - range) {
 }
 
 if (place_meeting(x, y, submarine)) {
-    image_speed = 1;
-    sprite_index = Mine_Explode;
-    speed = 0;
+    //sprite_index = Mine_idle;///
+    image_speed = .7;
+   
     //deal damage
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="7">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string> if (sprite_index == Mine_Explode &amp;&amp; image_index &gt;= 3) { 
-    instance_destroy();
-}
+         //   show_message(image_index);
+        //if (image_speed &gt;0){
+        
+           //show_message("all the hard work gone just like that");
+           if(image_index &gt;= 7){
+            instance_destroy();
+        }
+
+       }       // }
+    /*
+    with instance_place(Mine.x, Mine.y, Mine){
+
+    }
+    */
+
+
 </string>
           </argument>
         </arguments>
