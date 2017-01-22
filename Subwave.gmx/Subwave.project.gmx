@@ -10,24 +10,38 @@
     <sprite>sprites\spr_submarine</sprite>
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\sprite1</sprite>
+    <sprite>sprites\spr_ambient</sprite>
+    <sprite>sprites\spr_button_start</sprite>
     <sprite>sprites\sprite4</sprite>
+    <sprite>sprites\PuffNorm</sprite>
+    <sprite>sprites\PuffComing</sprite>
+    <sprite>sprites\FL</sprite>
+    <sprite>sprites\EEL</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\testing_bg</background>
   </backgrounds>
   <paths name="paths"/>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\the_shader.shader</shader>
+  </shaders>
   <objects name="objects">
-    <object>objects\enemy</object>
+    <object>objects\object7</object>
+    <object>objects\Eel1</object>
     <object>objects\submarine</object>
+    <object>objects\enemy</object>
     <object>objects\obstacle</object>
     <object>objects\npc_fish</object>
     <object>objects\obj_lighting</object>
     <object>objects\obj_wall</object>
-    <object>objects\Controller</object>
+    <object>objects\button_start</object>
+    <object>objects\button_credits</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
     <room>rooms\the_level_of_legend</room>
+    <room>rooms\credit_rooom</room>
+    <room>rooms\title_room</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
