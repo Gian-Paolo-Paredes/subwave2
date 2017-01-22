@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(view_xview[0]+ 32,view_yview[0]+32, ("HP: " + string(submarine.hp) + "/" + string(submarine.hp_max)))
-//draw_sprite(spr_healthbar_bg,1,view[64],vew_yview[0]+34)
-//draw_sprite_ext(spr_healthbar_inner,1,view_xview[0]+46,view_yview[0]+34,obj_player.hp/100,1,0,c_white,1);
+            <string>draw_healthbar(view_xview[0]+10, view_yview[0]+10, view_xview[0]+256, view_yview[0]+32, submarine.hp, c_black, c_red, c_green, 0, true, false);
 </string>
           </argument>
         </arguments>

@@ -40,6 +40,7 @@
     <object>objects\Mine</object>
     <object>objects\button_start</object>
     <object>objects\button_credits</object>
+    <object>objects\controller</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
