@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed = 2;
+            <string>speed = 0;
 gravity = 0;
 depth = -11; //makes it go in front of player
 
@@ -35,7 +35,7 @@ range = 300;
 spawnX = x;
 squawnY= y;
 //alarm time that sets direction
-alarm[0]=1.5*room_speed
+alarm[0]= .1 * room_speed
 </string>
           </argument>
         </arguments>
@@ -58,7 +58,7 @@ alarm[0]=1.5*room_speed
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>speed = 2;
     Xdirection = random_range(spawnX+range, spawnX-range);
     Ydirection = random_range(spawnX+range, spawnX-range);
     move_towards_point( Xdirection, Ydirection, speed );

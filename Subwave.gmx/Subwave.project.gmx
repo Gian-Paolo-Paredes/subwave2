@@ -47,6 +47,7 @@
     <object>objects\enemy</object>
     <object>objects\Merge_Object_and_Enemy</object>
     <object>objects\Barracuda</object>
+    <object>objects\obj_Eel</object>
     <object>objects\obj_Angler</object>
     <object>objects\Flounder</object>
     <object>objects\obstacle</object>

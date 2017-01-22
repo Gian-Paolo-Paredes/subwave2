@@ -29,7 +29,7 @@
 hspeed = 0;
 //idleSpeed is the random movement speed
 idleSpeed = 2;
-speed = 6;
+speed = 0;
 gravity = 0;
 max_speed = 8;
 has_collided = 0;
@@ -45,9 +45,9 @@ idleRange = 100;
 spawnX = x;
 squawnY= y;
 //alarm time that sets direction
-alarm[0]=1*room_speed
+alarm[0]=.1*room_speed;
 
-image_speed = 0.5;
+image_speed = 0.1;
 
 //ANGLERFISH LIGHT
 lightOn = false; 
@@ -73,7 +73,8 @@ lightOn = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!isAttacking) {
+            <string>speed = 2;
+if (!isAttacking) {
     Xdirection = random_range(spawnX+idleRange, spawnX-idleRange);
     Ydirection = random_range(spawnX+idleRange, spawnX-idleRange);
     move_towards_point( Xdirection, Ydirection, idleSpeed );
@@ -198,7 +199,7 @@ move_bounce_solid(true);
 //if (isAttacking) {
     //has_collided = 1;
     move_bounce_all(true);
-    motion_set(direction, speed);
+   // motion_set(direction, speed);
 //}
 
 //suicide barracuda
