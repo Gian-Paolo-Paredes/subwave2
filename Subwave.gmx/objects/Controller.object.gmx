@@ -25,7 +25,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_healthbar(view_xview[0]+10, view_yview[0]+10, view_xview[0]+256, view_yview[0]+32, submarine.hp, c_black, c_red, c_green, 0, true, false);
+            <string>var xscale = 0.5;
+var yscale = 0.5;
+draw_sprite_ext(health_bar_deco3,1,view_xview[0]+10,view_yview[0]+10,xscale,yscale,0,c_white,1);
+draw_sprite_part_ext(health_bar_deco2,1, 0, 0, submarine.hp/submarine.hp_max * sprite_get_width(health_bar_deco2), 
+    sprite_get_height(health_bar_deco2), view_xview[0]+10,view_yview[0]+10,xscale,yscale,c_white,1);
+draw_sprite_ext(health_bar_deco1,1,view_xview[0]+10,view_yview[0]+10,xscale,yscale,0,c_white,1);
+
+var light_ypos = view_yview[0]+20+sprite_get_height(health_bar_deco2)*yscale;
+var xscale = 0.3;
+var yscale = 0.3;
+draw_sprite_ext(light_battery3,1,view_xview[0]+10,light_ypos,xscale,yscale,0,c_white,1);
+draw_sprite_part_ext(light_battery2,1, 0, 0, submarine.light/submarine.light_max * sprite_get_width(light_battery2), 
+    sprite_get_height(light_battery2), view_xview[0]+10,light_ypos,xscale,yscale,c_white,1);
+draw_sprite_ext(light_battery1,1,view_xview[0]+10,light_ypos,xscale,yscale,0,c_white,1);
 </string>
           </argument>
         </arguments>

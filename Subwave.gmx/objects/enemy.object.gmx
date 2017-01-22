@@ -69,6 +69,7 @@ alarm[0]=30
             <kind>1</kind>
             <string>Xdirection = random_range(spawnX+range, spawnX-range);
 Ydirection = random_range(spawnX+range, spawnX-range);
+alarm[0] = 60;
 </string>
           </argument>
         </arguments>
@@ -92,11 +93,10 @@ Ydirection = random_range(spawnX+range, spawnX-range);
           <argument>
             <kind>1</kind>
             <string>key_space = keyboard_check(vk_space);
-
+sped = 1;
 //RANDOM MOVEMENT - this will be overriden by bouncing/key space below
-move_towards_point(Xdirection, Ydirection, speed);
-show_message(Xdirection + " " + Ydirection);
-
+//move_towards (Xdirection, Ydirection, speed);
+//show_message(Xdirection + " " + Ydirection);
 
 //range-10 makes it never bounce far enough away to not come back to sub
 if distance_to_object(submarine) &gt; range-100
@@ -106,16 +106,16 @@ if distance_to_object(submarine) &gt; range-100
 if(key_space &amp;&amp; distance_to_object(submarine) &lt; range &amp;&amp; has_collided = 0){
 //has_collided = 0 - thing has not bounced off of submarine (should be going towards sub)
 //has_collided = 1 - thing should bounce off of sub and go in opposite direction
-    if distance_to_object(submarine) &lt; range &amp;&amp; has_collided = 0 {
-            move_towards_point(submarine.x, submarine.y, speed);
-   
-     
-            //horizontal bounce
-            if(place_meeting(x + speed - submarine.speed, y, submarine)) {
-                direction = -direction + 180;
-                motion_set(direction, speed);
-                has_collided = 1;
-            }
+    direction = point_direction(x,y, submarine.x, submarine.y);
+} else{
+    //direction += 10; // random direction
+    //direction = 0;
+}
+hacc = lengthdir_x(sped, direction);//clamp(lengthdir_x(sped, dir),-1,1);
+vacc = lengthdir_y(sped, direction);//clamp(lengthdir_y(sped, dir),-1,1);
+
+hsp += hacc;
+vsp += vacc;
 
 if (abs(hsp) &gt; max_speed){
     hsp = sign(hsp) * max_speed;
@@ -123,42 +123,7 @@ if (abs(hsp) &gt; max_speed){
 if (abs(vsp) &gt; max_speed){
     vsp = sign(vsp) * max_speed;
 }
-/*
-//COLLISION WITH WALLS
-if ( place_meeting (x+hsp,y,obj_wall)){ 
-    //horizontal bounce
-    direction = -direction + 180;
-    hsp = -hsp/3;
-    has_collided = 0;
-     //show_message(vsp);
-}
-if ( place_meeting (x,y+vsp,obj_wall)){         
-    //vertical Collison
-     direction += 180;
-     vsp = -vsp/3;
-     has_collided = 0;
-}
 
-//COLLISION WITH SUB
-//horizontal bounce
-
-if(place_meeting(x + hsp - submarine.hspeed, y, submarine)) {
-    x = prevX;
-    direction = -direction + 180;
-    hsp = -hsp/2;
-    //motion_set(direction, speed);
-    has_collided = 1;
-}
-
-//Vertical bounce
-if(place_meeting(x, y + vsp - submarine.vspeed, submarine)) {
-    y = prevY;
-    direction += 180;
-    vsp = -vsp/2;
-    //motion_set(direction, speed);
-    has_collided = 1;
-}
-*/
 //move sub
 x+=hsp;
 y+=vsp;
@@ -166,19 +131,9 @@ y+=vsp;
 
     
 
-         //horizontal bounce
-                direction = -direction + 180;
-                motion_set(direction, speed);
-}
         
-//vertical Collison
-if ( place_meeting (x,y+speed,obj_wall)){
-    direction = -direction;
-    motion_set(direction, speed);
-}
 
-//if it's not bouncing off/following anything else, RANDOM MOVEMENT
-}
+
 </string>
           </argument>
         </arguments>
@@ -226,6 +181,7 @@ move_bounce_solid(true);
           <argument>
             <kind>1</kind>
             <string>move_bounce_all(true);
+ has_collided =1;
 </string>
           </argument>
         </arguments>
