@@ -93,7 +93,7 @@ alarm[0]=.5*room_speed
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>key_space = keyboard_check(vk_space);
+            <string>//key_space = global.flashlight_toggle;;
 sped = 1;
 
 //range-10 makes it never bounce far enough away to not come back to sub
@@ -101,7 +101,7 @@ if distance_to_object(submarine) &gt; range-100
     has_collided = 0;
 
 // if light is on
-if(key_space){
+if(global.flashlight_toggle){
     isAttacking = true; 
     sprite_index = PuffComing;
 }
