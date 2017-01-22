@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>Merge_Object_and_Enemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -63,104 +63,35 @@ vsp=4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var range = 200;
-key_space = keyboard_check(vk_space);
+            <string>//range-10 makes it never bounce far enough away to not come back to sub
+if distance_to_object(submarine) &gt; range
+    has_collided = 0;
 
-//random movement
-
- // direction = irandom_range(0,360);
-
-//    if (x&gt; OriginalX + range) {
-//        motion_set (180, speed);
-//        }
-//    if (x &lt;OriginalX -range){
-//        motion_set(0,speed);
-//        }
-
-//    if (y&gt; OriginalY +range){
-//        motion_set (180,speed);
-//     }
-//    if ( y &lt; OriginalY - range){
-//     motion_set (0, speed);
-//     }
-
-//image change
-//sprite_index = EEL;
-
-
-
-
-
-//if light is on, make enemy move toward sub
-    if(key_space){
-//has_collided = 0 - thing has not bounced off of submarine (should be going towards sub)
-//has_collided = 1 - thing should bounce off of sub and go in opposite direction
-
-    if distance_to_object(submarine) &lt; range &amp;&amp; has_collided = 0 {
-            move_towards_point(-submarine.x, -submarine.y, 5);
-            
-            if(keyboard_check(vk_space)){
-            sprite_index = EEL;
-            }else {
-                sprite_index = EEL; // will change depending on lighting
-            }
-
-   
-     
-            //horizontal bounce
-            if(place_meeting(x + speed - submarine.speed, y, submarine)) {
-                direction = -direction + 180;
-                motion_set(direction, speed);
-                has_collided = 1;
-            }
-
-            //Vertical bounce
-            if(place_meeting(x, y + speed - submarine.speed, submarine)) {
-                direction = -direction;
-                motion_set(direction, speed);
-                has_collided = 1;
-            }
-            
-            //WALL COLLISION BELOW
-            if ( place_meeting (x+speed,y,obj_wall)){
-                direction = -direction + 180;
-                motion_set(direction, speed);
-                //set to 0 so that enemy can follow sub again once it
-                //has bounced off any wall
-                has_collided = 0;
-            }
+// if light is on
+if(global.flashlight_toggle){
+    if(distance_to_object(submarine) &lt; range){
+        //has_collided = 0 - thing has not bounced off of submarine (should be going towards sub)
+        //has_collided = 1 - thing should bounce off of sub and go in opposite direction
         
-            if ( place_meeting (x,y+speed,obj_wall)){
-                direction = -direction;
-                motion_set(direction, speed);
-                has_collided = 0;
-
-            }
-
+        direction = -1 * point_direction(x,y, submarine.x, submarine.y);
+        hacc = lengthdir_x(speed, direction);//clamp(lengthdir_x(sped, dir),-1,1);
+        vacc = lengthdir_y(speed, direction);//clamp(lengthdir_y(sped, dir),-1,1);
+    
+        hsp += hacc;
+        vsp += vacc;
+    
+        if (abs(hsp) &gt; max_speed){
+            hsp = sign(hsp) * max_speed;
+        }
+        if (abs(vsp) &gt; max_speed){
+            vsp = sign(vsp) * max_speed;
+        }
+    
+        //move sub
+        x+=hsp;
+        y+=vsp;
     }
 }
-//range-10 makes it never bounce far enough away to not come back to sub
-if distance_to_object(submarine) &gt; range-100
-    has_collided = 0;
-    
-//COLLISION WITH WALLS
-if ( place_meeting (x+speed,y,obj_wall)){
-    
-         //horizontal bounce
-                direction = -direction + 180;
-                motion_set(direction, speed);
-              
-    }
-        
-        //vertical Collison
-    if ( place_meeting (x,y+speed,obj_wall)){
-                direction = -direction;
-                motion_set(direction, speed);
-
-        }
-        
-        
-
 </string>
           </argument>
         </arguments>
