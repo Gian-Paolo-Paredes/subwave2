@@ -41,10 +41,11 @@
   </shaders>
   <objects name="objects">
     <object>objects\object7</object>
-    <object>objects\Flounder</object>
     <object>objects\Eel1</object>
+    <object>objects\Flounder</object>
     <object>objects\submarine</object>
     <object>objects\enemy</object>
+    <object>objects\Merge_Object_and_Enemy</object>
     <object>objects\obstacle</object>
     <object>objects\npc_fish</object>
     <object>objects\obj_wall</object>
@@ -55,8 +56,8 @@
     <object>objects\controller</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\the_level_of_legend</room>
     <room>rooms\room0</room>
+    <room>rooms\the_level_of_legend</room>
     <room>rooms\credit_rooom</room>
     <room>rooms\title_room</room>
   </rooms>
